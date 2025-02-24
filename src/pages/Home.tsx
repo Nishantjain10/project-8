@@ -9,12 +9,7 @@ export default function Home() {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div className="text-center mb-12">
         <h2 className="text-4xl font-bold text-black dark:text-gray-200 mb-4">Welcome Home!</h2>
-        <p className="text-xl text-gray-600 dark:text-gray-200 max-w-2xl mx-auto text-left mb-2" style={{ textAlign: 'center' }}>
-          <a href="https://docs.google.com/document/d/1QXvTn7LaleLDscDlHKCnkOkYHT4bVcycJVGnI4KIxqc/edit?tab=t.0" className="text-blue-700">checkout the latest resume template!</a>
-        </p>
 
-        {/* RSS Ticker */}
-        
       <div className="my-11">
             <MainCarousel />
           </div>

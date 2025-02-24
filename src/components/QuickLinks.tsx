@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { BookOpen, MessageCircle, Linkedin, Mail, AtSign, Twitter, CloudSun } from 'lucide-react';
+import { BookOpen, MessageCircle, Linkedin, Mail, AtSign, Twitter, CloudSun, FileTerminal } from 'lucide-react';
 
 const QuickLinks = () => {
   return (
@@ -8,6 +8,12 @@ const QuickLinks = () => {
       <div className="space-y-4">
         <h3 className="text-xl font-semibold text-gray-800 mb-4">Resources</h3>
         <ul className="space-y-2">
+        <li>
+            <Link to="https://docs.google.com/document/d/1QXvTn7LaleLDscDlHKCnkOkYHT4bVcycJVGnI4KIxqc/edit?tab=t.0" className="flex items-center text-gray-600 hover:text-indigo-600">
+              <FileTerminal className="w-5 h-5 mr-2" />
+              Checkout The Resume Template!
+            </Link>
+          </li>
         <li>
             <Link to="/aboutus" className="flex items-center text-gray-600 hover:text-indigo-600">
               <AtSign className="w-5 h-5 mr-2" />
