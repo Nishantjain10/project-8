@@ -7,7 +7,10 @@ export default function AmbassadorProgram() {
         <div className="max-w-4xl mx-auto px-4">
         <section className="bg-white p-8 rounded-lg shadow-md mt-12">
           <h1 className="text-4xl font-bold text-black mb-4">Ambassador Program</h1>
-          <p className="text-xl text-gray-800 max-w-2xl mx-auto text-left mb-2">Join the elite circle of AI and tech innovators with the Torc Ambassador Program! This isn’t just another ambassador program—it’s an exclusive opportunity to shape the future of AI, connect with top industry experts, and amplify your influence. As a Torc Ambassador, you’ll get premium swag, paid travel to conferences, VIP recognition across our 100K+ developer community, and access to private networking spaces. In return, you’ll share your expertise through content, community engagement, and thought leadership. No gimmicks—just real opportunities to grow, build, and make an impact. Ready to lead the charge? Apply now!</p>
+          <p className="text-xl text-gray-800 max-w-2xl mx-auto text-left mb-2">
+              Join the elite circle of AI and tech innovators with the Torc Ambassador Program! This isn’t just another ambassador program—it’s an exclusive opportunity to shape the future of AI, connect with top industry experts, and amplify your influence. As a Torc Ambassador, you’ll get premium swag, paid travel to conferences, VIP recognition across our 100K+ developer community, and access to private networking spaces. In return, you’ll share your expertise through content, community engagement, and thought leadership. No gimmicks—just real opportunities to grow, build, and make an impact. Ready to lead the charge?  
+              <a href="https://tvbwr2u67vr.typeform.com/to/uJmFURRm" className="text-blue-500 hover:underline"> Apply now!</a>
+          </p>
         </section>
         </div>
       </div>
