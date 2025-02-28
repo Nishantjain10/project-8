@@ -4,7 +4,7 @@ import { faDiscord } from '@fortawesome/free-brands-svg-icons';
 
 const TopBanner: React.FC = () => {
     return (
-        <div className="p-2 text-center shadow-md relative dark:bg-gray-800">
+        <div className="p-2 text-center shadow-md relative dark:bg-gray-900">
             <div className="inline-flex items-center justify-center gap-2">
                 <a
                     href="https://www.torc.dev/discord"
