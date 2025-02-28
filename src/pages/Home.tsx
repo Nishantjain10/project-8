@@ -1,7 +1,6 @@
 import WeeklyCalendar from '../components/WeeklyCalendar';
 import QuickLinks from '../components/QuickLinks';
 import GetInvolved from '../components/GetInvolved';
-import MainCarousel from '../components/carousel/MainCarousel';
 import TheTeam from '../components/TheTeam';
 
 export default function Home() {
@@ -11,7 +10,7 @@ export default function Home() {
         <h2 className="text-4xl font-bold text-black dark:text-gray-200 mb-4">Welcome Home!</h2>
 
       <div className="my-11">
-            <MainCarousel />
+      {/*<img src="path_to_your_image" alt="Description of the image" />*/}
           </div>
       <p className="text-xl text-gray-600 dark:text-gray-200 max-w-2xl mx-auto text-left mb-2">
       Hey friends! Think of the <a href="https://torc.dev" target="_blank" rel="noopener noreferrer" className="text-blue-700">Torc community</a>  as your "home base" for your career journey. We know the path can be tough and sometimes lonely, but that’s why we’re here, to have your back in the hard times and cheer you on in the good ones.💛
