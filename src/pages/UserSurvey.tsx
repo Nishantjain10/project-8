@@ -148,7 +148,7 @@ const DataCollectionForm: React.FC = () => {
   return (
     <Card className="w-full max-w-2xl mx-auto">
       <CardHeader>
-        <CardTitle>Info on You</CardTitle>
+        <CardTitle>Let us get to know you just a bit better.</CardTitle>
       </CardHeader>
       <CardContent>
         {submitStatus && (
@@ -185,7 +185,7 @@ const DataCollectionForm: React.FC = () => {
           </div>
 
           <div className="space-y-2">
-            <label className="block font-medium">Expertise</label>
+            <label className="block font-medium">Area of Interest</label>
             <input
               type="text"
               name="expertise"
