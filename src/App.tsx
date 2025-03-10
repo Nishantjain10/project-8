@@ -20,7 +20,7 @@ function App() {
           <Route path="mentorship" element={<MentorshipProgram />} />
           <Route path="ambassador" element={<AmbassadorProgram />} />
           <Route path="aboutus" element={<AboutUs />} />
-          <Route path="card-page" element={
+          <Route path="devdatabase" element={
             <Card>
               <UserSurvey />
             </Card>

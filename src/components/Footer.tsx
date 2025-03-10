@@ -12,7 +12,7 @@ export default function Footer() {
                 torc.dev
               </a>
             </p>
-            <Link to="/card-page">
+            <Link to="/devdatabase">
               <p>Dev Database</p> {/* Add content as children */}
             </Link>
           </div>
