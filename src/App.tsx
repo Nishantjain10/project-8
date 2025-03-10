@@ -6,8 +6,8 @@ import FAQ from './pages/FAQ';
 import MentorshipProgram from './pages/MentorshipProgram';
 import AmbassadorProgram from './pages/AmbassadorProgram';
 import AboutUs from './pages/AboutUs';
-import { Card } from './components/Card';
 import UserSurvey from './pages/UserSurvey';
+import UserDatabasePage from './pages/UserDatabasePage'; // Add this import
 
 function App() {
   return (
@@ -20,11 +20,8 @@ function App() {
           <Route path="mentorship" element={<MentorshipProgram />} />
           <Route path="ambassador" element={<AmbassadorProgram />} />
           <Route path="aboutus" element={<AboutUs />} />
-          <Route path="devdatabase" element={
-            <Card>
-              <UserSurvey />
-            </Card>
-          } /> {/* Add the Card route with DeveloperSurvey as a child */}
+          <Route path="devdatabase" element={<UserSurvey />} />
+          <Route path="/UserDatabasePage" element={<UserDatabasePage />} />
         </Route>
       </Routes>
     </BrowserRouter>
