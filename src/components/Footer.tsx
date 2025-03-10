@@ -13,7 +13,7 @@ export default function Footer() {
               </a>
             </p>
             <Link to="/card-page">
-              <p>Dev Survey</p> {/* Add content as children */}
+              <p>Dev Database</p> {/* Add content as children */}
             </Link>
           </div>
           <div className="text-sm">
