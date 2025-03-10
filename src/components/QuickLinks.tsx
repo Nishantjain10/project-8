@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { BookOpen, MessageCircle, Linkedin, Mail, AtSign, Twitter, CloudSun, FileTerminal } from 'lucide-react';
+import { BookOpen, MessageCircle, Linkedin, Mail, AtSign, Twitter, CloudSun, FileTerminal, Contact, Youtube } from 'lucide-react';
 
 const QuickLinks = () => {
   return (
@@ -16,7 +16,7 @@ const QuickLinks = () => {
           </li>
           <li>
             <Link to="/UserDatabasePage" className="flex items-center text-gray-600 hover:text-indigo-600">
-              <AtSign className="w-5 h-5 mr-2" />
+              < Contact className="w-5 h-5 mr-2" />
               Friend Directory
             </Link>
           </li>
@@ -53,6 +53,12 @@ const QuickLinks = () => {
             <a href="https://x.com/torcdotdev" className="flex items-center text-gray-600 hover:text-indigo-600">
               <Twitter className="w-5 h-5 mr-2" />
               Twitter (X)
+            </a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com/@torcdotdev" className="flex items-center text-gray-600 hover:text-indigo-600">
+              <Youtube className="w-5 h-5 mr-2" />
+               Youtube
             </a>
           </li>
           <li>
