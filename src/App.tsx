@@ -20,8 +20,8 @@ function App() {
           <Route path="mentorship" element={<MentorshipProgram />} />
           <Route path="ambassador" element={<AmbassadorProgram />} />
           <Route path="aboutus" element={<AboutUs />} />
-          <Route path="devdatabase" element={<UserSurvey />} />
-          <Route path="/UserDatabasePage" element={<UserDatabasePage />} />
+          <Route path="directory" element={<UserSurvey />} />
+          <Route path="/devdirectory" element={<UserDatabasePage />} />
         </Route>
       </Routes>
     </BrowserRouter>
