@@ -72,7 +72,7 @@ const UserDatabasePage: React.FC = () => { // Corrected type
                     <th className="px-4 py-2 text-left border-b">Job Title</th>
                     <th className="px-4 py-2 text-left border-b">Location</th>
                     <th className="px-4 py-2 text-left border-b">Expertise</th>
-                    <th className="px-4 py-2 text-left border-b">Email</th>
+                    <th className="px-4 py-2 text-left border-b">Email</th> 
                     <th className="px-4 py-2 text-left border-b">Social Link</th>
                   </tr>
                 </thead>

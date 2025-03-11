@@ -8,8 +8,9 @@ interface AppwriteFormData {
   location: string;
   expertise: string;
   email: string;
-  "social-link": string; // Required by Appwrite
+  "social-link": string;
   jobTitle: string;
+  xBlueskyLink: string; // Added xBlueskyLink
 }
 
 // This is what we use in our form (with linkedin for UI consistency)
@@ -19,6 +20,7 @@ interface UIFormData {
   expertise: string;
   email: string;
   linkedin: string;
+  xBlueskyLink: string;
   jobTitle: string;
 }
 
@@ -29,7 +31,8 @@ const DataCollectionForm: React.FC = () => {
     expertise: '',
     email: '',
     linkedin: '',
-    jobTitle: ''
+    xBlueskyLink: '',
+    jobTitle: '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<{
@@ -37,7 +40,6 @@ const DataCollectionForm: React.FC = () => {
     message: string;
   } | null>(null);
 
-  // Initialize Appwrite client
   const client = new Client()
     .setEndpoint('https://cloud.appwrite.io/v1')
     .setProject('67cefa6600232d73231d');
@@ -53,44 +55,45 @@ const DataCollectionForm: React.FC = () => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus(null);
-    
-    // Transform the form data to match Appwrite schema
+
     const appwriteData: AppwriteFormData = {
       name: formData.name,
       location: formData.location,
       expertise: formData.expertise,
       email: formData.email,
-      "social-link": formData.linkedin, // Map linkedin to social-link
-      jobTitle: formData.jobTitle
+      "social-link": formData.linkedin,
+      jobTitle: formData.jobTitle,
+      xBlueskyLink: formData.xBlueskyLink, // Added xBlueskyLink
     };
-    
+
     console.log('Form data being submitted to Appwrite:', appwriteData);
 
     try {
-      // First try Google Sheets submission
       let googleSheetsSuccess = false;
       try {
-        await fetch('https://script.google.com/macros/s/AKfycbwcpfUKnXz3lxty6wGseCliUyjsyo5Hm2xFi8kZxBwj3SevJRwHUiLZ0RM6EK_Na4q8/exec', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(formData), // Send original form data to Google Sheets
-          mode: 'no-cors'
-        });
+        await fetch(
+          'https://script.google.com/macros/s/AKfycbwcpfUKnXz3lxty6wGseCliUyjsyo5Hm2xFi8kZxBwj3SevJRwHUiLZ0RM6EK_Na4q8/exec',
+          {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData),
+            mode: 'no-cors',
+          }
+        );
         googleSheetsSuccess = true;
       } catch (googleError) {
         console.error('Google Sheets submission error:', googleError);
       }
-      
-      // Then try Appwrite submission
+
       let appwriteSuccess = false;
       try {
         const appwriteResponse = await databases.createDocument(
-          '67cefa9300301c67b71a',  // Database ID
-          '67cefa9a001ada16cad5',  // Collection ID
-          ID.unique(),  // Use Appwrite's ID generator
-          appwriteData  // Use the transformed data for Appwrite
+          '67cefa9300301c67b71a',
+          '67cefa9a001ada16cad5',
+          ID.unique(),
+          appwriteData
         );
         console.log('Appwrite Response:', appwriteResponse);
         appwriteSuccess = true;
@@ -102,43 +105,44 @@ const DataCollectionForm: React.FC = () => {
           console.error('Appwrite error details:', appwriteError.response);
         }
       }
-      
-      // Set status message based on what worked
+
       if (googleSheetsSuccess && appwriteSuccess) {
         setSubmitStatus({
           success: true,
-          message: 'Form successfully submitted!'
+          message: 'Form successfully submitted!',
         });
-        // Clear form after successful submission
         setFormData({
           name: '',
           location: '',
           expertise: '',
           email: '',
           linkedin: '',
-          jobTitle: ''
+          xBlueskyLink: '',
+          jobTitle: '',
         });
       } else if (googleSheetsSuccess) {
         setSubmitStatus({
           success: true,
-          message: 'Form submitted to Google Sheets, but there was an issue with the database.'
+          message:
+            'Form submitted to Google Sheets, but there was an issue with the database.',
         });
       } else if (appwriteSuccess) {
         setSubmitStatus({
           success: true,
-          message: 'Form submitted to database, but there was an issue with Google Sheets.'
+          message:
+            'Form submitted to database, but there was an issue with Google Sheets.',
         });
       } else {
         setSubmitStatus({
           success: false,
-          message: 'Unable to submit form to either system. Please try again later.'
+          message: 'Unable to submit form to either system. Please try again later.',
         });
       }
     } catch (error) {
       console.error('General error submitting form:', error);
       setSubmitStatus({
         success: false,
-        message: 'There was an error submitting your form. Please try again.'
+        message: 'There was an error submitting your form. Please try again.',
       });
     } finally {
       setIsSubmitting(false);
@@ -148,7 +152,7 @@ const DataCollectionForm: React.FC = () => {
   return (
     <Card className="w-full max-w-2xl mx-auto">
       <CardHeader>
-        <CardTitle>Let us get to know you just a bit better.</CardTitle>
+        <CardTitle>This directory is for internal networking for the torc community. Anything you put on this directory will be publicly shared to the community. Please leverage this form as a way to grow your network with the amazing individuals at torc!!</CardTitle>
       </CardHeader>
       <CardContent>
         {submitStatus && (
@@ -216,6 +220,19 @@ const DataCollectionForm: React.FC = () => {
               type="url"
               name="linkedin"
               value={formData.linkedin}
+              onChange={handleChange}
+              className="w-full p-2 border rounded-md"
+              required
+              disabled={isSubmitting}
+            />
+          </div>
+
+          <div className="space-y-2">
+            <label className="block font-medium">X/Bluesky Link</label>
+            <input
+              type="url" // Use 'url' for links
+              name="xBlueskyLink"
+              value={formData.xBlueskyLink}
               onChange={handleChange}
               className="w-full p-2 border rounded-md"
               required
