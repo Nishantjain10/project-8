@@ -15,7 +15,7 @@ const QuickLinks = () => {
             </Link>
           </li>
           <li>
-            <Link to="/UserDatabasePage" className="flex items-center text-gray-600 hover:text-indigo-600">
+            <Link to="/devdirectory" className="flex items-center text-gray-600 hover:text-indigo-600">
               < Contact className="w-5 h-5 mr-2" />
               Friend Directory
             </Link>

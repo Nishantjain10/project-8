@@ -12,8 +12,8 @@ export default function Footer() {
                 torc.dev
               </a>
             </p>
-            <Link to="/devdatabase">
-              <p>Dev Database</p> {/* Add content as children */}
+            <Link to="/directory">
+              <p>Dev Directory</p> {/* Add content as children */}
             </Link>
           </div>
           <div className="text-sm">
